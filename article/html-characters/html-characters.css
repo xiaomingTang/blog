@@ -1,0 +1,34 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+table{
+	margin: auto;
+	border-collapse: collapse;
+}
+
+td{
+	width: 9em;
+	height: 2em;
+	line-height: 2em;
+	border: 1px solid #777;
+	text-align: left;
+}
+td.special-character{
+	width: 4.5em;
+	height: 1em;
+	line-height: 1em;
+	font-size: 2em;
+}
+td.odd-data{
+	color: #c78;
+}
+
+
+
+
+
+
+
+

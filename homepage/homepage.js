@@ -58,6 +58,16 @@
 			recommandation: 4,
 		}
 		article.unshift(bat_rename);
+		var html_characters = {
+			title: "html字符与编码",
+			lastModified: "2017-04-24  5:02:34",
+			tag: [" ", " ", " "],
+			url: "article/html-characters/index.html",
+			summary: "html字符与编码，特殊字符已放大，方便观看。",
+			recommandation: 4,
+ 		
+		}
+ 		article.unshift(html_characters);
 		//将article数组中的所有文章动态创建出来
 		for(var i=0, len=article.length; i<len; i++){
 			articleElem.appendChild(createArticleSection(article[i]));

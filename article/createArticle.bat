@@ -21,7 +21,7 @@ echo. >>%fileName%.css
 cd.>%fileName%.js
 echo window.onload=function(){>>%fileName%.js
 echo. 	>>%fileName%.js
-echo 	!function(){>>%fileName%.js
+echo 	!!(function(){>>%fileName%.js
 echo 		function $(id){>>%fileName%.js
 echo 			return document.getElementById(id);>>%fileName%.js
 echo 		}>>%fileName%.js
@@ -41,7 +41,6 @@ echo. 		>>%fileName%.js
 echo 		myjs.addHandler(window, "click", function(event){>>%fileName%.js
 echo 			var e = myjs.getEvent(event);>>%fileName%.js
 echo 			var t = myjs.getTarget(e);>>%fileName%.js
-echo 			console.log(t.attributes["targetSrc"].value);>>%fileName%.js
 echo 			if(t.tagName.toUpperCase() === "IMG" ^&^& t.attributes["targetSrc"]){>>%fileName%.js
 echo 				fullScreenDisplay(t.attributes["targetSrc"].value.trim());>>%fileName%.js
 echo 			}>>%fileName%.js
@@ -49,7 +48,7 @@ echo.			>>%fileName%.js
 echo 		});>>%fileName%.js
 echo. 		>>%fileName%.js
 echo. 		>>%fileName%.js
-echo 	}>>%fileName%.js
+echo 	})();>>%fileName%.js
 echo. 		>>%fileName%.js
 echo. 		>>%fileName%.js
 echo. 		>>%fileName%.js
@@ -119,7 +118,8 @@ echo 					game: "游戏",>>index.html
 echo 					life: "日常生活",>>index.html
 echo 					github: "github",>>index.html
 echo 					reprint: "转载",>>index.html
-echo 					killtime:"闲聊",>>index.html
+echo 					killtime: "闲聊",>>index.html
+echo 					webTools: "web小工具",>>index.html
 echo 				} --^>>>index.html
 echo 				^<li^>^<span class="color-_r"^>tag^</span^>^</li^>>>index.html
 echo 				^<li^>^<span class="color-_g"^>tag^</span^>^</li^>>>index.html
