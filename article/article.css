@@ -67,6 +67,7 @@ nav a, .content a{
 .code{
 	padding: 1em;
 	margin: 0.5em 0;
+	text-indent: 0;
 	background-color: #444;
 	color: #777;
 	border-radius:1em;
