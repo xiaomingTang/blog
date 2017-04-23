@@ -54,7 +54,7 @@
 			lastModified: "2017-04-23 23:54:19",
 			tag: ["bat", "webTools", "life"],
 			url: "article/bat-rename/index.html",
-			summary: " ",
+			summary: "上次弄一个相册，需要修改大量的文件名，全部修改为类似“small_1”、“big_2”这样的形式，就临时去看了看批处理一点教程（ps：命令行中任意命令后加“ /?”是该命令的详情）。自己捣鼓出了点简单的批处理，就在这里做个备忘吧。",
 			recommandation: 4,
 		}
 		article.unshift(bat_rename);
