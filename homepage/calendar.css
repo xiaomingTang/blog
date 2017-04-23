@@ -1,0 +1,73 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+#calendar{
+	width: 280px;
+	margin: auto;
+	text-align: center;
+	font-size: 14px;
+	color: #000;
+}
+.calendar-content{
+	border-collapse: collapse;
+	
+}
+.calendar-content td{
+	display:inline-block;
+	width: 38px;
+	height: 38px;
+	line-height: 38px;
+	border: 1px solid #ccc;
+}
+/* 头部 */
+.calendar-header span{
+	display:inline-block;
+	width: 50%;
+	border-top: 2px solid #666;
+}
+.calendar-header{
+	position: relative;
+	height: 40px;
+	line-height: 40px;
+	margin: 10px 0;
+	font-size: 10px;
+}
+.calendar-pre-month, .calendar-next-month{
+	position: absolute;
+	bottom: 0;
+	width: 25%;
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	border: 4px solid #666;
+	border-radius: 6px;
+	cursor: pointer;
+}
+.calendar-next-month:hover, .calendar-pre-month:hover{
+	background-color: #666;
+	color: #fff;
+}
+.calendar-pre-month{
+	left: 0;
+}
+.calendar-next-month{
+	right: 0;
+}
+.calendar-content-header{
+	background-color: #ddd;
+}
+.calendar-header-weekend, .calendar-body-weekend{
+	color: #f00;
+}
+.calendar-pre-date{
+	color: #ddd;
+}
+.calendar-pre-date.calendar-body-weekend{
+	color: #fdd;
+}
+.calendar-cur-date{
+	background-color: #c56;
+	color: #ffe;
+}

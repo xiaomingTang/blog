@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="author" content="tang" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	
+	<title>汤小明的个人博客</title>
+	
+	<link rel="shortcut icon" type="image/ico" href="homepage/img/icon_head.ico" />
+	<!-- 主页 -->
+	<link rel="stylesheet" type="text/css" href="homepage/homepage.css" />
+	<!-- 轮播图 -->
+	<link rel="stylesheet" type="text/css" href="homepage/carousel.css" />
+	<!-- 日历 -->
+	<link rel="stylesheet" type="text/css" href="homepage/calendar.css" />
+	<!-- 输入框 -->
+	<link rel="stylesheet" type="text/css" href="homepage/easyinput.css" />
+	<!-- 文章区 -->
+	<link rel="stylesheet" type="text/css" href="homepage/article.css" />
+</head>
+<body>
+<section id="homepage">
+
+	<!-- 头部 -->
+	<header>
+		<nav>
+			<li><a href="javascript:;">首页</a></li>
+			<li class="special"><a href="album/feng.html" target="_blank">锋哥的个人相册</a></li>
+			<li><a href="javascript:;">汤弟的个人相册</a></li>
+		</nav>
+	</header>
+
+	<!-- 轮播图 -->
+	<section id="carousel"></section>
+	
+	<section class="body">
+		<!-- 侧边栏 -->
+		<aside>
+			<!-- 文章标签 -->
+			<section id="fixed" class="msg">
+				<div class="head">
+					<strong>标签</strong>
+				</div>
+				<div class="body">
+					<div id="tag-list"></div>
+				</div>
+			</section>
+			<!-- 搜索 -->
+			<section class="msg">
+				<div id="md5"></div>
+			<!--<div id="googleSearch"></div>
+				<div id="baiduSearch"></div>-->
+			</section>
+			<!-- 关于我 -->
+			<section class="msg">
+				<img id="me" src="homepage/img/me.jpg" width="300px" />
+			</section>
+			<!-- 日历 -->
+			<section class="msg">
+				<div id="calendar"></div>
+			</section>
+			<!-- 个人相关 -->
+			<section class="msg">
+				<div class="head">
+					<strong>个人相关</strong>
+				</div>
+				<div class="body">
+					<ul>
+						<li><a target="_blank" href="https://www.google.com.hk/">Google</a></li>
+						<li><a target="_blank" href="https://www.github.com/xiaomingTang/blog/">我的Github</a></li>
+						<li><a target="_blank" href="https://xiaomingTang.github.io/canvas_snake/">贪吃蛇小游戏</a></li>
+					</ul>
+				</div>
+			</section>
+			<!-- 友链 -->
+			<section class="msg">
+				<div class="head">
+					<strong>友情链接</strong>
+				</div>
+				<div class="body">
+					<ul>
+						<li><a target="_blank" href="http://www.zhangxinxu.com/">张鑫旭</a></li>
+						<li><a target="_blank" href="http://www.ruanyifeng.com/home.html">阮一峰</a></li>
+						<li><a target="_blank" href="http://ife.baidu.com/2016/task/all">百度前端技术学院</a></li>
+						<li><a target="_blank" href="http://www.xuanfengge.com/">轩枫阁</a></li>
+						<li><a target="_blank" href="http://www.fgm.cc/learn/">fgm</a> (特别鸣谢, 带我入门)</li>
+					</ul>
+				</div>
+			</section>
+		</aside>
+
+		<!-- 文章区 -->
+		<article></article>
+	</section>
+	<!-- 底部 -->
+	<footer>
+		<section class="trick"></section>
+	</footer>
+
+</section>
+	
+
+	<!-- 自用小方法 -->
+	<script type="text/javascript" src="myjs.js" ></script>
+	<!-- 插件 -->
+	<script type="text/javascript" src="homepage/calendar.js" ></script>
+	<script type="text/javascript" src="homepage/fullScreenDisplay.js" ></script>
+	<script type="text/javascript" src="homepage/carousel.js" ></script>
+	<script type="text/javascript" src="homepage/easyinput.js" ></script>
+	<!-- 主页, 所有动态生成的元素都在这里集中生成 -->
+	<script type="text/javascript" src="homepage/homepage.js" ></script>
+
+</body>
+</html>

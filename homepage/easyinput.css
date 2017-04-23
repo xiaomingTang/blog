@@ -1,0 +1,33 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+.easy-input-box{
+	height:100%;
+}
+.easy-input-input{
+	display:inline-block;
+	text-indent:6px;
+	margin-right:6px;
+	width:246px;	 /*所需宽度-54 */
+	height:100%;
+	border:none;
+}
+.easy-input-input.nothing{
+	color:#ccc;
+}
+.easy-input-button{
+	width:40px;
+	height:100%;
+	border:none;
+}
+
+
+
+
+
+
+
+
+

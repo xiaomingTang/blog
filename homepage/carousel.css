@@ -1,0 +1,81 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+.no-select{
+	user-select: none;
+	-moz-user-select: none; 
+	-moz-user-select: none; 
+	-o-user-select: none; 
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+#carousel{
+	position: relative;
+	width: 1200px;		/*	待修改为图片真实宽度	*/
+	height: 300px;		/*	待修改为图片真实高度	*/
+	overflow: hidden;
+	margin: auto;
+}
+
+.carousel-leftBtn, .carousel-rightBtn{
+	position: absolute;
+	display: inline-block;
+	top: 50%;
+	margin-top: -20px;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	border-radius: 20px;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	color: rgba(255, 255, 255, 0.3);
+	cursor: pointer;
+}
+.carousel-leftBtn:hover, .carousel-rightBtn:hover{
+	color: rgba(0, 0, 0, 0.3);
+	border-color: rgba(0, 0, 0, 0.3);
+	background-color: rgba(255, 255, 255, 0.7);
+}
+.carousel-leftBtn{
+	left: 10px;
+}
+.carousel-rightBtn{
+	right: 10px;
+}
+
+.carousel-imgBox{
+	position: relative;
+	display: inline-block;
+}
+
+.carousel-navBar{
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+}
+
+.carousel-navBar-ul{
+	text-align: right;
+	
+}
+
+.carousel-navBar-li{
+	display: inline-block;
+	margin-left: 10px;
+	width: 10px;
+	height: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	border-radius: 5px;
+	color: rgba(255, 255, 255, 0.3);
+	cursor: pointer;
+}
+.carousel-navBar-li.current, .carousel-navBar-li:hover{
+	color: rgba(0, 0, 0, 0.3);
+	border-color: rgba(0, 0, 0, 0.3);
+	background-color: rgba(255, 255, 255, 0.7);
+}
+

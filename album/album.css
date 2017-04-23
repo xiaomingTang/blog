@@ -1,0 +1,128 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+img{
+	display: block;
+}
+li.album-category{
+	list-style-type: none;
+	padding: 10px 0;
+	border-bottom: 1px solid #000;
+}
+li.album-category:last-child{
+	border-bottom: none;
+}
+#album{
+	width:980px;
+	margin: auto;
+}
+/* 相册标题 */
+.album-title{
+	text-align: center;
+}
+/* 相册描述 */
+.album-aside{
+	text-align: right;
+}
+/* 类目头部 */
+.album-category-header{
+	max-width: 200px;
+	padding: 5px 10px;
+	overflow: hidden;
+	background-color: #666;
+	color: #ffe;
+	border-radius: 20px;
+}
+/* 类目标题 */
+.album-category-title{
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+.album-category-cover-container{
+/*****	display: none;	****/
+	padding: 5px 0;
+}
+/* 类目封面主体(缩略图的.parent.parent) */
+.album-category-cover-body{
+	width: 190px;
+	height: 190px;
+	padding: 5px;
+	background-color: #fff;
+}
+/* 类目封面图片外盒 */
+.album-category-cover-imgBox{
+	width: 190px;
+	height: 190px;
+	overflow: hidden;
+}
+/* 类目封面图片 */
+.album-category-cover-img{
+	height: 190px;
+	margin: auto;
+	cursor: pointer;
+}
+.album-category-cover-img:hover{
+	height: 191px;
+}
+/* 类目封面底部(日期) */
+.album-category-cover-footer{
+	height: 20px;
+	line-height: 20px;
+	font-size: 10px;
+	text-align: right;
+}
+/* 类目主体(小图区) */
+.album-category-body{
+/****	display: none;	*****/
+	width: 960px;
+	padding: 10px;
+	margin-top: 10px;
+	background-color: #666;
+	border-radius: 20px;
+}
+/* 小图区容器(.parent.parent) */
+.album-image-small-container{
+/*	margin: 5px;	*/
+	display: inline-block;
+}
+/* 小图区图片 */
+.album-image-small-img{
+	border:5px solid #fff;
+}
+/* 小图区底部(日期) */
+.album-image-small-footer{
+	height: 30px;
+	vertical-align: top;
+	text-indent: 10px;
+	font-size: 10px;
+	color: #ffe;
+}
+/* 全屏覆层 */
+.fullScreenCladding{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+.hidden{
+	display: none;
+}
+
+.waterfall-column{
+	display:inline-block;
+	vertical-align: top;
+}
+.waterfall-column:last-child{
+	float: none;
+}
+
+
+
+
+
+
+
