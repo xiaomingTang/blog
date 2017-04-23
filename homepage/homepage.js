@@ -13,7 +13,7 @@
 			html: "html",
 			js: "js",
 			css:"css",
-			wabTools: "web小工具",
+			webTools: "web小工具",
 			bat: "简单批处理",
 			game: "游戏",
 			life: "日常生活",
@@ -49,6 +49,15 @@
 		}
 		article.unshift(usualCH);
 		
+		var bat_rename = {
+			title: "批量修改文件名",
+			lastModified: "2017-04-23 23:54:19",
+			tag: ["bat", "webTools", "life"],
+			url: "article/bat-rename/index.html",
+			summary: " ",
+			recommandation: 4,
+		}
+		article.unshift(bat_rename);
 		//将article数组中的所有文章动态创建出来
 		for(var i=0, len=article.length; i<len; i++){
 			articleElem.appendChild(createArticleSection(article[i]));

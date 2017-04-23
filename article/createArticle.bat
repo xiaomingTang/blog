@@ -21,27 +21,38 @@ echo. >>%fileName%.css
 cd.>%fileName%.js
 echo window.onload=function(){>>%fileName%.js
 echo. 	>>%fileName%.js
-echo 	function $(id){>>%fileName%.js
-echo 		return document.getElementById(id);>>%fileName%.js
+echo 	!function(){>>%fileName%.js
+echo 		function $(id){>>%fileName%.js
+echo 			return document.getElementById(id);>>%fileName%.js
+echo 		}>>%fileName%.js
+echo. 		>>%fileName%.js
+echo. 		>>%fileName%.js
+echo 		var %fileName% = {>>%fileName%.js
+echo 			title: "%title%",>>%fileName%.js
+echo 			lastModified: "%date:~0,4%-%date:~5,2%-%date:~8,2% %time:~0,8%",>>%fileName%.js
+echo 			tag: [" ", " ", " "],>>%fileName%.js
+echo 			url: "article/%fileName%/index.html",>>%fileName%.js
+echo 			summary: " ",>>%fileName%.js
+echo 			recommandation: 4,>>%fileName%.js
+echo. 		>>%fileName%.js
+echo 		}>>%fileName%.js
+echo. 		>>%fileName%.js
+echo. 		>>%fileName%.js
+echo 		myjs.addHandler(window, "click", function(event){>>%fileName%.js
+echo 			var e = myjs.getEvent(event);>>%fileName%.js
+echo 			var t = myjs.getTarget(e);>>%fileName%.js
+echo 			console.log(t.attributes["targetSrc"].value);>>%fileName%.js
+echo 			if(t.tagName.toUpperCase() === "IMG" ^&^& t.attributes["targetSrc"]){>>%fileName%.js
+echo 				fullScreenDisplay(t.attributes["targetSrc"].value.trim());>>%fileName%.js
+echo 			}>>%fileName%.js
+echo.			>>%fileName%.js
+echo 		});>>%fileName%.js
+echo. 		>>%fileName%.js
+echo. 		>>%fileName%.js
 echo 	}>>%fileName%.js
-echo. 	>>%fileName%.js
-echo. 	>>%fileName%.js
-echo 	var %fileName% = {>>%fileName%.js
-echo 		title: "%title%",>>%fileName%.js
-echo 		lastModified: "%date:~0,4%-%date:~5,2%-%date:~8,2% %time:~0,8%",>>%fileName%.js
-echo 		tag: [" ", " ", " "],>>%fileName%.js
-echo 		url: "article/%fileName%/index.html",>>%fileName%.js
-echo 		summary: " ",>>%fileName%.js
-echo 		recommandation: 4,>>%fileName%.js
-echo. 	>>%fileName%.js
-echo. 	>>%fileName%.js
-echo. 	>>%fileName%.js
-echo 	}>>%fileName%.js
-echo. 	>>%fileName%.js
-echo. 	>>%fileName%.js
-echo. 	>>%fileName%.js
-echo. 	>>%fileName%.js
-echo. 	>>%fileName%.js
+echo. 		>>%fileName%.js
+echo. 		>>%fileName%.js
+echo. 		>>%fileName%.js
 echo }>>%fileName%.js
 echo. 	>>%fileName%.js
 echo. 	>>%fileName%.js
@@ -98,6 +109,18 @@ echo 		^</header^>>>index.html
 echo 		^<div class="time"^>^<time^>%date:~0,4%-%date:~5,2%-%date:~8,2% %time:~0,8%^</time^>^</div^>>>index.html
 echo 		^<div class="tag"^>>>index.html
 echo 			^<ul^>>>index.html
+echo 			^<!-- tagList = {>>index.html
+echo 					html: "html",>>index.html
+echo 					js: "js",>>index.html
+echo 					css:"css",>>index.html
+echo 					wabTools: "web小工具",>>index.html
+echo 					bat: "简单批处理",>>index.html
+echo 					game: "游戏",>>index.html
+echo 					life: "日常生活",>>index.html
+echo 					github: "github",>>index.html
+echo 					reprint: "转载",>>index.html
+echo 					killtime:"闲聊",>>index.html
+echo 				} --^>>>index.html
 echo 				^<li^>^<span class="color-_r"^>tag^</span^>^</li^>>>index.html
 echo 				^<li^>^<span class="color-_g"^>tag^</span^>^</li^>>>index.html
 echo 				^<li^>^<span class="color-_b"^>tag^</span^>^</li^>>>index.html
@@ -127,6 +150,7 @@ echo 	^</section^>>>index.html
 echo.	>>index.html
 echo.	>>index.html
 echo 	^<script type="text/javascript" src="../../myjs.js" ^>^</script^>>>index.html
+echo 	^<script type="text/javascript" src="../../homepage/fullScreenDisplay.js" ^>^</script^>>>index.html
 echo 	^<script type="text/javascript" src="%fileName%.js" ^>^</script^>>>index.html
 echo ^</body^>>>index.html
 echo ^</html^>>>index.html
