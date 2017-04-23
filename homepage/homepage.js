@@ -61,13 +61,23 @@
 		var html_characters = {
 			title: "html字符与编码",
 			lastModified: "2017-04-24  5:02:34",
-			tag: [" ", " ", " "],
+			tag: ["html", "webTools"],
 			url: "article/html-characters/index.html",
 			summary: "html字符与编码，特殊字符已放大，方便观看。",
 			recommandation: 4,
  		
 		}
  		article.unshift(html_characters);
+		var git_shell = {
+			title: "git-Bash小教程",
+			lastModified: "2017-04-24  6:19:11",
+			tag: ["github", "bat", "killtime"],
+			url: "article/git-shell/index.html",
+			summary: "github客户端bash命令上传文件超简易教程，照葫芦画瓢，一看就会。",
+			recommandation: 4,
+ 		
+		}
+ 		article.unshift(git_shell);
 		//将article数组中的所有文章动态创建出来
 		for(var i=0, len=article.length; i<len; i++){
 			articleElem.appendChild(createArticleSection(article[i]));

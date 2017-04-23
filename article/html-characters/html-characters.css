@@ -10,15 +10,15 @@ table{
 
 td{
 	width: 9em;
-	height: 2em;
-	line-height: 2em;
+	height: 3em;
+	line-height: 3em;
 	border: 1px solid #777;
 	text-align: left;
 }
 td.special-character{
 	width: 4.5em;
-	height: 1em;
-	line-height: 1em;
+	height: 1.5em;
+	line-height: 1.5em;
 	font-size: 2em;
 }
 td.odd-data{

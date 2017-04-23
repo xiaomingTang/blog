@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="author" content="tang" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	
+	<title>git-Bash小教程</title>
+	
+	<link rel="shortcut icon" type="image/ico" href="../../homepage/img/icon_head.ico" />
+	<link rel="stylesheet" type="text/css" href="git-shell.css" />
+	<link rel="stylesheet" type="text/css" href="../article.css" />
+</head>
+<body>
+	<section class="body">
+		<header>
+		<div><a class="color-_g" href="../../index.html" target="_blank">&lt;&lt; xiaoming's blog</a></div>
+		</header>
+		<header>
+			<h1 class="title">git-Bash小教程</h1>
+		</header>
+		<div class="time"><time>2017-04-24  6:19:11</time></div>
+		<div class="tag">
+			<ul>
+			<!-- tagList = {
+					html: "html",
+					js: "js",
+					css:"css",
+					bat: "绠€鍗曟壒澶勭悊",
+					game: "娓告垙",
+					life: "鏃ュ父鐢熸椿",
+					github: "github",
+					reprint: "杞浇",
+					killtime: "闂茶亰",
+				} -->
+				<li><span class="color-_r">github</span></li>
+				<li><span class="color-_g">简单批处理</span></li>
+				<li><span class="color-_b">闲聊</span></li>
+			</ul>
+		</div>
+		<nav class="nav">
+			
+			
+		</nav>
+		<article class="content">
+			<div class="text">
+				<h2>说明</h2>
+				<p>本教程仅针对<span class="color-_r">github</span>windows客户端通过<span class="color-_r">Bash</span>命令行上传文件。</p>
+				<h2>事前工作</h2>
+						<p>1、网页端新建仓库(repository)<a href="http://jingyan.baidu.com/article/b907e627d3c1d546e7891ceb.html" target="_blank">点击查看怎么新建仓库</a>。这里，我将新仓库命名为"test"。</p>
+						<br />
+						<p>2、安装github客户端<a href="https://desktop.github.com/" target="_blank">点击进入github客户端下载页面</a>。安装好客户端之后，我们应该有如下图两个应用：<img src="img/1.jpg" alt="github桌面图标" />前一个是图形化界面应用,后一个是命令行。本教程就是专门针对后一个命令行中<span class="color-_r">Bash</span>命令上传。</p>
+						<br />
+						<p>3、建议将文件夹选项中的"显示隐藏文件"打开。<a href="http://jingyan.baidu.com/article/e73e26c0f5981124adb6a7ad.html" target="_blank">点击查看怎么显示隐藏文件</a></p>
+						<br />
+						<p>4、建议设置一个专用的文件夹,专门存放需上传到github上的文件。这里，我用的是 D:\我的文档\GitHub 。可以将命令行的起始位置设置为该文件夹。设置步骤为: 右键桌面上的Git Shell图标 &gt;&gt; 属性 &gt;&gt; 选择"快捷方式"选项卡 &gt;&gt; 修改起始位置并确认。</p>
+						<br />
+						<p/>5、命令行有4种脚本语言<span class="color-_r">cmd</span><span class="color-_r">Git Bash</span><span class="color-_r">PowerShell</span><span class="color-_r">Custom</span>本教程介绍的是Git Bash，因此需要将命令行语言修改为Git Bash方法步骤是: 打开github图形界面 &gt;&gt; 点击右上角的齿轮(设置) &gt;&gt; 选择option.. &gt;&gt; 修改默认Default Shell为Git Bash并确认。</p>
+						
+				<h2>Git Bash上传</h2>
+						<p>将你想要上传的文件装在一个文件夹中，整体复制到 之前设置的 专用文件夹 D:\我的文档\GitHub 下，打开git命令行，依次输入如下共6行命令：</p>
+						<div class = "code">
+							<ul>
+								<li>
+									<p><a href="http://man.linuxde.net/cd" target="_blank">$ cd <span class="note">你的文件夹的名字</span></a></p>
+									<p>用于更改当前目录 <span class="note">D:\我的文档\GitHub</span> &gt;&gt; <span class="note">D:\我的文档\GitHub\你的文件夹</span>
+								</li>
+								<li>
+									<p><a href="http://www.cnblogs.com/mengdd/p/4153773.html" target="_blank">$ git init</a></p>
+									<p>仓库的初始化,会自动在你的文件夹下新建一个<span class="note">.git</span>隐藏文件夹</p>
+								</li>
+								<li>
+									<p><a href="http://www.cnblogs.com/mengdd/p/4153773.html" target="_blank">$ git add .</a></p>
+									<p>将该目录下所有文件添加到缓存，注意：最后面的点不能省略,那个点表示(当前目录下)所有文件</p>
+								</li>
+								<li>
+									<p><a href="http://www.cnblogs.com/mengdd/p/4153773.html" target="_blank">$ git commit -m "<span class="note">随便写点什么（最好是有意义的备注）</span>"</a></p>
+									<p>将缓存添加到本地仓库</p>
+								</li>
+								<li>
+									<p><a href="http://www.cnblogs.com/mengdd/p/4153773.html" target="_blank">$ git remote add <span class="note">你自己随便取什么代号</span> git@github.com:<span class="note">你的github用户名</span>/<span class="note">github线上仓库的名字</span>.git</a></p>
+									<p>相当于给远程(线上)仓库取个简称，方便以后使用</p>
+								</li>
+								<li>
+									<p><a href="http://www.cnblogs.com/mengdd/p/4153773.html" target="_blank">$ git push <span class="note">你刚取的代号</span> master</a></p>
+									<p>将本地仓库推送到远程(线上)仓库</p>
+								</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<h2>整体效果</h2>
+				<img class="small-img" src="img/small_2.jpg" targetSrc="img/big_2.jpg" alt="整体效果,难道图片没加载出来???" title="点击可切换大图/小图" />
+			</div>
+		</article>
+	</section>
+	
+	
+	<script type="text/javascript" src="../../myjs.js" ></script>
+	<script type="text/javascript" src="../../homepage/fullScreenDisplay.js" ></script>
+	<script type="text/javascript" src="git-shell.js" ></script>
+</body>
+</html>

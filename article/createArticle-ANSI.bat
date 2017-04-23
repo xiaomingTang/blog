@@ -112,14 +112,14 @@ echo 			^<!-- tagList = {>>index.html
 echo 					html: "html",>>index.html
 echo 					js: "js",>>index.html
 echo 					css:"css",>>index.html
-echo 					wabTools: "webå°å·¥å…·",>>index.html
-echo 					bat: "ç®€å•æ‰¹å¤„ç†",>>index.html
-echo 					game: "æ¸¸æˆ",>>index.html
-echo 					life: "æ—¥å¸¸ç”Ÿæ´»",>>index.html
+echo 					wabTools: "webÐ¡¹¤¾ß",>>index.html
+echo 					bat: "¼òµ¥Åú´¦Àí",>>index.html
+echo 					game: "ÓÎÏ·",>>index.html
+echo 					life: "ÈÕ³£Éú»î",>>index.html
 echo 					github: "github",>>index.html
-echo 					reprint: "è½¬è½½",>>index.html
-echo 					killtime: "é—²èŠ",>>index.html
-echo 					webTools: "webå°å·¥å…·",>>index.html
+echo 					reprint: "×ªÔØ",>>index.html
+echo 					killtime: "ÏÐÁÄ",>>index.html
+echo 					webTools: "webÐ¡¹¤¾ß",>>index.html
 echo 				} --^>>>index.html
 echo 				^<li^>^<span class="color-_r"^>tag^</span^>^</li^>>>index.html
 echo 				^<li^>^<span class="color-_g"^>tag^</span^>^</li^>>>index.html

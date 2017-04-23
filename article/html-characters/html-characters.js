@@ -9,7 +9,7 @@ window.onload=function(){
 		var html_characters = {
 			title: "html字符与编码",
 			lastModified: "2017-04-24  5:02:34",
-			tag: [" ", " ", " "],
+			tag: ["html", "webTools"],
 			url: "article/html-characters/index.html",
 			summary: " ",
 			recommandation: 4,

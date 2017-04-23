@@ -19,9 +19,6 @@ body{
 	
 	background-color: #f5f5d5;
 }
-li{
-	list-style-type: none;
-}
 .body{
 	margin: 1em auto;
 	width: 100%;
@@ -41,6 +38,7 @@ time{
 	text-align: right;
 }
 .tag li{
+	list-style-type: none;
 	display: inline-block;
 	margin-left: 0.5em;
 }
@@ -55,6 +53,7 @@ nav a, .content a{
 
 .content{
 	letter-spacing: 1px;
+	line-height: 2em;
 }
 .text{
 	padding: 1em;
