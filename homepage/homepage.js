@@ -171,25 +171,6 @@
 		
 	}();
 	
-	//	轮播图配置
- 	!function(){
-		var config={
-				container: myjs.$("carousel"),
-				imgList: ["homepage/img/1.jpg", "homepage/img/2.jpg", "homepage/img/3.jpg"],
-				width: 1200,
-				height: 300,
-				delay: 4000,
-			},
-			carousel=new Carousel(config);
-		carousel.init();
-		
-	}();
-	
-	//	全屏显示大图
-	myjs.$("me").onclick = function(){
-		fullScreenDisplay(this.src);
-	}
-	
 	//	日历
 	!function(){
 		var config = {
@@ -224,8 +205,27 @@
 		
 	}();
 	
+	//	我的图片配置
+	$("me").src = "homepage/img/me.jpg";
 	
+	//	轮播图配置
+ 	!function(){
+		var config={
+				container: myjs.$("carousel"),
+				imgList: ["homepage/img/1.jpg", "homepage/img/2.jpg", "homepage/img/3.jpg"],
+				width: 1200,
+				height: 300,
+				delay: 4000,
+			},
+			carousel=new Carousel(config);
+		carousel.init();
+		
+	}();
 	
+	//	全屏显示大图
+	myjs.$("me").onclick = function(){
+		fullScreenDisplay(this.src);
+	}
 	
 	
 	
