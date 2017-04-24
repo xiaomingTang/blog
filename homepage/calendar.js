@@ -161,13 +161,13 @@
 				case 0:
 					break;
 				case 1:
-					if(myjs.hasClass(t, "calendar-next-date")){
+					if(myjs.hasClass(t, "calendar-pre-date") || myjs.hasClass(t, "calendar-cur-date")){
 						var date=new Date(this.year, this.month, t.innerHTML);
 						alert(date);
 					}
 					break;
 				case 2:
-					if(myjs.hasClass(t, "calendar-next-date")){
+					if(myjs.hasClass(t, "calendar-pre-date") || myjs.hasClass(t, "calendar-cur-date")){
 						if(!this.selectStart){
 							this.selectStart = new Date(this.year, this.month, t.innerHTML);
 						} else {

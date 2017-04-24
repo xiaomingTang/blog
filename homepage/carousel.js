@@ -83,7 +83,7 @@
 			clearInterval(this.loop);
 			var left = parseFloat(this.imgBox.style.left);
 			var that = this;
-			var step = 2 * (n - left)/that.width;
+			var step = 8 * (n - left)/that.width;
 			if(left > n){	//	左移
 				that.loop = setInterval(function(){
 					left += step;

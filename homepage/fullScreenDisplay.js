@@ -22,6 +22,7 @@
 			var style = myjs.loadStyle(cssText);
 			
 			document.body.appendChild(cladding);
+			myjs.addHandler(cladding, "click", removeCladding);
 			
 			img.onload = function(){
 				var sx = document.documentElement.clientWidth || document.body.clientWidth;
@@ -41,7 +42,7 @@
 				
 				myjs.loadStyle("#" + imgId + "{display: inline-block; position: relative; top:50%; left:50%; }");
 				
-				myjs.addHandler(cladding, "click", removeCladding);
+				
 				myjs.addHandler(cladding, "mousewheel", handleMouseWheel);
 				myjs.addHandler(cladding, "DOMMouseScroll", handleMouseWheel);
 			}

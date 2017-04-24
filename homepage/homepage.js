@@ -8,7 +8,7 @@
 	!function(){
 		
 		//	标签列表, 应作为全局变量
-		//如"game"标签, 类名是"tag-game", 显示内容是"游戏";
+		//	如"game"标签, 类名是"tag-game", 显示内容是"游戏";
 		var tagList={
 			html: "html",
 			js: "js",
@@ -35,7 +35,6 @@
 		})();
 
 		
-		
 		var articleElem = myjs.$("homepage").getElementsByTagName("article")[0];
 		var article = [];
 		
@@ -58,6 +57,7 @@
 			recommandation: 4,
 		}
 		article.unshift(bat_rename);
+		
 		var html_characters = {
 			title: "html字符与编码",
 			lastModified: "2017-04-24  5:02:34",
@@ -68,6 +68,7 @@
  		
 		}
  		article.unshift(html_characters);
+		
 		var git_shell = {
 			title: "git-Bash小教程",
 			lastModified: "2017-04-24  6:19:11",
@@ -78,32 +79,29 @@
  		
 		}
  		article.unshift(git_shell);
+		
 		//将article数组中的所有文章动态创建出来
 		for(var i=0, len=article.length; i<len; i++){
 			articleElem.appendChild(createArticleSection(article[i]));
 		}
 		
-		//分类栏添加点击事件
-		//同类名修改样式, 文章重排序
+		//	分类栏添加点击事件
+		//	同类名修改样式, 文章重排序
 		myjs.addHandler($("tag-list"), "click", function(event){
 			var e=myjs.getEvent(event),
 				t=myjs.getTarget(e),
-				style=document.createElement("style"),
+				style,
 				head=document.getElementsByTagName("head")[0];
 			if($("tag-style")){
 				head.removeChild($("tag-style"));
 			}
 			if(/tag-(\w+)\b/g.test(t.className)){
 				var tagName=RegExp.$1;
-				style.rel="stylesheet";
-				style.type="text/css";
+				style = myjs.loadStyle((".tag-"+tagName+"{color:#c23;}"), style);
 				style.id="tag-style";
-				style.innerHTML=".tag-"+tagName+"{color:#c23;}";
-				head.appendChild(style);
 				article.sort(function(a,b){
 					return (b.tag.join("").indexOf(tagName) >= 0) - (a.tag.join("").indexOf(tagName) >= 0);
 				});
-				var articleElem=document.getElementsByTagName("article")[0];
 				articleElem.innerHTML="";
 				for(var i=0, len=article.length; i<len; i++){
 					articleElem.appendChild(createArticleSection(article[i]));
@@ -111,7 +109,13 @@
 			}
 		});
 		
-		//date对象按 2017-3-12 12:08:49 的格式返回字符串
+		//	日历栏添加点击事件
+		
+		
+		
+		
+		
+		//	date对象按 2017-3-12 12:08:49 的格式返回字符串
 		function displayTime(date){
 			var y,m,d,h,min,s;
 			y=date.getFullYear();
@@ -174,7 +178,7 @@
 				imgList: ["homepage/img/1.jpg", "homepage/img/2.jpg", "homepage/img/3.jpg"],
 				width: 1200,
 				height: 300,
-				delay: 5000,
+				delay: 4000,
 			},
 			carousel=new Carousel(config);
 		carousel.init();
@@ -193,7 +197,7 @@
 			container: myjs.$("calendar"),	//	容器
 			selectable: false,			//	顶部月份年份是否可选
 			suitable: false,			//	行数是否自适应（或固定6行）
-			selectType: 1,				//	主体日期是否可选（0--不可选**1--可选单个日期**2--可选时间段）
+			selectType: 2,				//	主体日期是否可选（0--不可选**1--可选单个日期**2--可选时间段）
 		};
 		var calendar = new Calendar(config);
 		

@@ -19,6 +19,9 @@ body{
 	
 	background-color: #f5f5d5;
 }
+img[targetSrc]{
+	cursor: pointer;
+}
 .body{
 	margin: 1em auto;
 	width: 100%;

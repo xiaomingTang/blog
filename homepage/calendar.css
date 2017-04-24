@@ -61,13 +61,24 @@
 .calendar-header-weekend, .calendar-body-weekend{
 	color: #f00;
 }
-.calendar-pre-date{
+.calendar-next-date{
 	color: #ddd;
 }
-.calendar-pre-date.calendar-body-weekend{
+.calendar-next-date.calendar-body-weekend{
 	color: #fdd;
 }
 .calendar-cur-date{
 	background-color: #c56;
 	color: #ffe;
 }
+.calendar-pre-date, .calendar-cur-date{
+	cursor: pointer;
+}
+.calendar-pre-date:active, .calendar-cur-date:active{
+	background-color: #eef;
+}
+
+
+
+
+
