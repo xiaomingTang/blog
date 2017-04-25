@@ -30,8 +30,8 @@ header{
 header li{
 	float:left;
 	height:3.125em;
-	color:#ffe;
-	background-color:#696;
+	color:#aaa;
+	background-color:#444;
 }
 header li.special{
 	color:#311;
