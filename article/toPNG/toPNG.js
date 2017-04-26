@@ -38,17 +38,20 @@ window.onload=function(){
 			}
 			
 			reader.onerror = function(){
-				alert("FileReader initialize error");
+				$("#loading").text("由于你的电脑太破，加载失败！骚年，要我是你，我就扔掉！");
 			}
 			reader.onprogress = function(event){
 				if(event.lengthComputable){
-					console.log(event.loaded + "/" + event.total);
+					$("#loading").text(event.loaded + " / " + event.total);
 				}
 			}
 			reader.onload = function(){
+				$("#loading").text("你不知道，其实图片还在加载。相信我！");
 				myjs.$("img").src = reader.result;
 				
 				myjs.$("img").onload = function(){
+					$("#loading").text("恭喜你！骚年！你成功了！");
+					myjs.$("input-value").innerHTML = (myjs.$("input").value);
 					var width = this.width;
 					var height = this.height;
 					if(document.getElementsByTagName("canvas").length > 0){
@@ -56,7 +59,7 @@ window.onload=function(){
 						oldCanvas.parentNode.removeChild(oldCanvas);
 					}
 					
-					var canvas = myjs.$("canvas").appendChild(document.createElement("canvas"));
+					var canvas = myjs.$("canvas").appendChild(myjs.newElem("canvas", null, "你的浏览器不支持canvas，还是算了吧。。。"));
 					canvas.width = width;
 					canvas.height = height;
 					

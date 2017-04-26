@@ -49,20 +49,21 @@
 		<article class="content">
 			<div class="text">
 				<div>
+					<p><span class="color-r">小伙别整太大图片，越大加载越慢！</span></p>
 					<p>可修改任意图片透明度，白底变透明，底下的输入条可拖动改变透明区域大小。</p>
 					<p>满意后右键另存为.png格式即可</p>
-					<p>加载图片后，灰度阈值调节栏在两图片之间。</p>
+					<p><span class="color-r">加载信息:&nbsp;&nbsp;<span id="loading">暂无</span></span></p>
 				</div>
 				<div>
 					<input id="file" type="file" />
+				</div>
+				<div>
+					<p><span style="color: #ffe;">阈值调节:</span>&nbsp;&nbsp;-1<input id="input" type="range" min=-1 max=255 step=1 value=255 />255<span id="input-value" style="margin-left: 2em; color: #c78;">现在你调它也没卵用，还是先加载个图片吧。</span></p>
 				</div>
 			</div>
 		</article>
 		<div>
 			<img id="img" />
-		</div>
-		<div>
-			-1<input id="input" type="range" min=-1 max=255 step=1 value=255 />255<span id="input-value" style="margin-left: 2em; color: #c78;">255</span>
 		</div>
 		<div id="canvas"></div>
 	</section>
