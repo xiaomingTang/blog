@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="author" content="tang" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	
+	<title>图片白底变透明</title>
+	
+	<link rel="shortcut icon" type="image/ico" href="../../homepage/img/icon_head.ico" />
+	<link rel="stylesheet" type="text/css" href="toPNG.css" />
+	<link rel="stylesheet" type="text/css" href="../article.css" />
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" ></script>
+</head>
+<body>
+	<section class="body">
+		<header>
+		<div><a class="color-_g" href="../../index.html" target="_blank">&lt;&lt; xiaoming's blog</a></div>
+		</header>
+		<header>
+			<h1 class="title">图片白底变透明</h1>
+		</header>
+		<div class="time"><time>2017-04-27  0:35:48</time></div>
+		<div class="tag">
+			<ul>
+			<!-- tagList = {
+					html: "html",
+					js: "js",
+					css:"css",
+					wabTools: "web小工具",
+					bat: "简单批处理",
+					game: "游戏",
+					life: "日常生活",
+					github: "github",
+					reprint: "转载",
+					killtime: "闲聊",
+					webTools: "web小工具",
+				} -->
+				<li><span class="color-_r">wabTools</span></li>
+				<li><span class="color-_g">life</span></li>
+				<li><span class="color-_b">killtime</span></li>
+			</ul>
+		</div>
+		<nav class="nav">
+			
+			
+		</nav>
+		<article class="content">
+			<div class="text">
+				<div>
+					<p>可修改任意图片透明度，白底变透明，底下的输入条可拖动改变透明区域大小。</p>
+					<p>满意后右键另存为.png格式即可</p>
+				</div>
+				<div>
+					<input id="file" type="file" />
+				</div>
+			</div>
+		</article>
+		<div>
+			<img id="img" />
+		</div>
+		<div>
+			-1<input id="input" type="range" min=-1 max=255 step=1 value=255 />255<span id="input-value" style="margin-left: 2em; color: #c78;">255</span>
+		</div>
+		<div id="canvas"></div>
+	</section>
+	
+	
+	<script type="text/javascript" src="../../myjs.js" ></script>
+	<script type="text/javascript" src="../../homepage/fullScreenDisplay.js" ></script>
+	<script type="text/javascript" src="toPNG.js" ></script>
+</body>
+</html>

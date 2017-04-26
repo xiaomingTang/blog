@@ -79,6 +79,16 @@
  		
 		}
  		article.unshift(git_shell);
+		var toPNG = {
+			title: "图片白底变透明",
+			lastModified: "2017-04-27  0:35:48",
+			tag: ["webTools", "life", "killtime"],
+			url: "article/toPNG/index.html",
+			summary: "jpg等格式转为png，并修改白底为透明，可调整灰度阈值，扩大透明区范围。",
+			recommandation: 4,
+ 		
+		}
+ 		article.unshift(toPNG);
 		
 		//将article数组中的所有文章动态创建出来
 		for(var i=0, len=article.length; i<len; i++){
