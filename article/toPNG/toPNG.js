@@ -113,13 +113,26 @@ window.onload=function(){
 			constructor: Filter,
 			
 			grayFilter: function(n){
+				var r, g, b;
+				if(/(\d+)\D*(\d+)\D*(\d+)/g.test(myjs.$("bg-color").value)){
+					r = RegExp.$1;
+					g = RegExp.$2;
+					b = RegExp.$3;
+				}
 				
 				for(var i = 0, len = this.data.length; i < len; i += 4){
 					var average = (this.data[i] + this.data[i+1] + this.data[i+2]) / 3;
 					
 					if(average > n){
-						//this.imageData.data[4 * i] = this.imageData.data[4 * i + 1] = this.imageData.data[4 * i + 2] = 255;
-						this.imageData.data[i + 3] = 0;
+						if(!!r){
+							this.imageData.data[i] = r;
+							this.imageData.data[i + 1] = g;
+							this.imageData.data[i + 2] =b;
+							this.imageData.data[i + 3] = this.data[i + 3];
+						} else {
+							this.imageData.data[i + 3] = 0;
+						}
+						
 					} else {
 						this.imageData.data[i] = this.data[i];
 						this.imageData.data[i + 1] = this.data[i + 1];
