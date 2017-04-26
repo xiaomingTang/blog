@@ -9,10 +9,7 @@ window.onload=function(){
 			url: "article/toPNG/index.html",
 			summary: "jpg等格式转为png，并修改白底为透明，可调整灰度阈值，扩大透明区范围。",
 			recommandation: 4,
- 		
 		}
- 		
- 		
 		myjs.addHandler(window, "click", function(event){
 			var e = myjs.getEvent(event);
 			var t = myjs.getTarget(e);
@@ -22,8 +19,6 @@ window.onload=function(){
 			
 		});
  		
-		
-			
 				
 		var fileList = myjs.$("file");
 		
@@ -64,8 +59,6 @@ window.onload=function(){
 					canvas.height = height;
 					
 					myjs.loadStyle("#img, #canvas{position: relative;left: " + (parseInt($(".body").css("width"))-width) / 2 + "px;}");
-					
-					
 					
 					var config = {
 						img: myjs.$("img"),
