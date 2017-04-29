@@ -21,6 +21,7 @@ aside > section:first-child, article > section:first-child{
 
 
 aside{
+	float:right;
 	width:20.75em;
 }
 aside.fixed{
@@ -39,10 +40,26 @@ aside > .msg.fixed{
 	color:#ffe;
 	background-color:#696;
 }
+/* 搜索框开始 */
+.search-box{
+	width: 100%;
+}
+.aside-search{
+	padding-left: 0.5em;
+	width: 17em;
+	height: 2em;
+	border: none;
+}
+.search-button{
+	float: right;
+	width: 4em;
+	height: 2em;
+	border: none;
+}
 
+/* 搜索框结束 */
 article{
-	float:right;
-	width:47.25em;
+	width: 47.25em;
 }
 article a{
 	text-decoration:underline;

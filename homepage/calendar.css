@@ -58,7 +58,11 @@
 .calendar-content-header{
 	background-color: #ddd;
 }
-.calendar-header-weekend, .calendar-body-weekend{
+.calendar-header-weekend{
+	color: #f00;
+}
+/* 主体 
+.calendar-body-weekend{
 	color: #f00;
 }
 .calendar-next-date{
@@ -77,7 +81,30 @@
 .calendar-pre-date:active, .calendar-cur-date:active{
 	background-color: #eef;
 }
-
+*/
+.calendar-pre-date, .calendar-next-date{
+	color: #ddd;
+}
+.calendar-body-weekend{
+	color: #fdd;
+}
+.calendar-cur-date{
+	color: #ffe ! important;
+	background-color: #c56 ! important;
+}
+.calendar-selected{
+	background-color: #eef;
+}
+.special-date{
+	color: #111;
+	cursor: pointer;
+}
+.special-date:hover{
+	background-color: rgb(221, 242, 246);
+}
+.special-date.calendar-body-weekend{
+	color: #f00;
+}
 
 
 

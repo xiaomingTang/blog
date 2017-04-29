@@ -15,8 +15,6 @@
 	<link rel="stylesheet" type="text/css" href="homepage/carousel.css" />
 	<!-- 日历 -->
 	<link rel="stylesheet" type="text/css" href="homepage/calendar.css" />
-	<!-- 输入框 -->
-	<link rel="stylesheet" type="text/css" href="homepage/easyinput.css" />
 	<!-- 文章区 -->
 	<link rel="stylesheet" type="text/css" href="homepage/article.css" />
 </head>
@@ -34,8 +32,18 @@
 	<section id="carousel"></section>
 	
 	<section class="body">
+		<!-- 文章区 -->
+		<article></article>
 		<!-- 侧边栏 -->
 		<aside>
+			<!-- 搜索 -->
+			<section class="msg">
+				<div class="search-box">
+					<input class="aside-search" type="text" placeholder="站内搜索" /><button class="search-button">确认</button>
+				</div>
+			<!--<div id="googleSearch"></div>
+				<div id="baiduSearch"></div>-->
+			</section>
 			<!-- 文章标签 -->
 			<section id="fixed" class="msg">
 				<div class="head">
@@ -45,19 +53,13 @@
 					<div id="tag-list"></div>
 				</div>
 			</section>
-			<!-- 搜索 -->
+			<!-- 日历 -->
 			<section class="msg">
-				<div id="md5"></div>
-			<!--<div id="googleSearch"></div>
-				<div id="baiduSearch"></div>-->
+				<div id="calendar"></div>
 			</section>
 			<!-- 关于我 -->
 			<section class="msg">
 				<img id="me" width="300px" />
-			</section>
-			<!-- 日历 -->
-			<section class="msg">
-				<div id="calendar"></div>
 			</section>
 			<!-- 个人相关 -->
 			<section class="msg">
@@ -98,8 +100,6 @@
 			</section>
 		</aside>
 
-		<!-- 文章区 -->
-		<article></article>
 	</section>
 	<!-- 底部 -->
 	<footer>
@@ -115,7 +115,6 @@
 	<script type="text/javascript" src="homepage/calendar.js" ></script>
 	<script type="text/javascript" src="homepage/fullScreenDisplay.js" ></script>
 	<script type="text/javascript" src="homepage/carousel.js" ></script>
-	<script type="text/javascript" src="homepage/easyinput.js" ></script>
 	<!-- 主页, 所有动态生成的元素都在这里集中生成 -->
 	<script type="text/javascript" src="homepage/homepage.js" ></script>
 </body>

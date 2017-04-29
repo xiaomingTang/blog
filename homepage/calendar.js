@@ -13,6 +13,7 @@
  	*/
  	
 	function Calendar(config){
+		
 		this.dateObj = config.date;
 		var that = this;
 		
@@ -45,6 +46,20 @@
 		this.selectStart = null;
 		this.box = null;
 		this.elem = null;
+		
+		this.fn = config.fn;
+		/*	specialDates = [	//	数据格式如下
+		 *		{
+		 *			date: [2017, 4, 21],
+		 *			contents: "常用汉字及其unicode编码"
+		 *		},
+		 *		{
+		 *			date: [2017, 4, 23],
+		 *			contents: "批量修改文件名"
+		 *		}
+		 *	];
+		 */
+		this.specialDates = config.specialDates;
 	}
 	Calendar.prototype={
 		constructor:Calendar,
@@ -123,8 +138,15 @@
 			var curYear=curDate.getFullYear();
 			var curMonth=curDate.getMonth();
 			var tempDate= curYear<this.year ? -8 : curYear>this.year ? 40 : curMonth<this.month ? -8 : curMonth>this.month ? 40 : curDate.getDate();
-			
-			
+			var specialDate = {};
+			console.log(this.specialDates);
+			for(var i = 0, len = this.specialDates.length; i < len; i++){
+				if(this.specialDates[i].date[0] == this.year && this.specialDates[i].date[1] == this.month){
+					var str = specialDate[this.specialDates[i].date[2] + ""];
+					specialDate[this.specialDates[i].date[2] + ""] = str ? str + this.specialDates[i].content + " ; " : this.specialDates[i].content + " ; ";
+				}
+			}
+			console.log(specialDate);
 			for(var i = 0; i < total; i++){
 				if(i % 7 == 0){
 					var tr = myjs.newElem("tr", "calendar-content-body");
@@ -146,9 +168,14 @@
 					if(i % 7 == 0 || i % 7 == 6){
 						myjs.addClass(td, "calendar-body-weekend");
 					}
+					if((d + "") in specialDate){
+						myjs.addClass(td, "special-date");
+						td.title = specialDate[d + ""];
+					}
 					tr.appendChild(td);
 				}
 			}
+			
 			this.container.appendChild(table);
 			table = tbody = tr = td = null;
 		},
@@ -161,19 +188,32 @@
 				case 0:
 					break;
 				case 1:
-					if(myjs.hasClass(t, "calendar-pre-date") || myjs.hasClass(t, "calendar-cur-date")){
+					if(myjs.hasClass(t, "special-date")){
 						var date=new Date(this.year, this.month, t.innerHTML);
-						alert(date);
+						this.fn(date);
 					}
 					break;
 				case 2:
 					if(myjs.hasClass(t, "calendar-pre-date") || myjs.hasClass(t, "calendar-cur-date")){
 						if(!this.selectStart){
 							this.selectStart = new Date(this.year, this.month, t.innerHTML);
+							this.addDateClass([this.year, this.month, parseInt(t.innerHTML), "calendar-selected"]);
 						} else {
 							var newDate = new Date(this.year, this.month, t.innerHTML);
-							alert(this.selectStart + "---" + newDate);
-							this.selectStart = null;
+							if(this.convertToString(this.selectStart) == this.convertToString(newDate)){
+								this.selectStart = newDate = null;
+								this.selectStart = undefined;
+								this.removeDateClass("calendar-selected");
+								return ;
+							}
+							if(this.selectStart > newDate){
+								this.fn(newDate, this.selectStart);
+							} else{
+								this.fn(this.selectStart, newDate);
+							}
+							this.removeDateClass("calendar-selected");
+							newDate = null;
+							this.selectStart = undefined;
 						}
 					}
 					break;
@@ -221,6 +261,41 @@
 				
 			}
 			
+		},
+		convertToString: function(dateObject){
+			var year = dateObject.getFullYear() + "";
+			var month = dateObject.getMonth() + 1;
+			var date = dateObject.getDate();
+			month = month > 9 ? month : "0" + month;
+			date = date > 9 ? date : "0" + date;
+			return year + "-" + month + "-" + date;
+		},
+		convertToArray: function(dateObject){
+			var year = dateObject.getFullYear() + "";
+			var month = dateObject.getMonth() + 1;
+			var date = dateObject.getDate();
+			month = month > 9 ? month : "0" + month;
+			date = date > 9 ? date : "0" + date;
+			return [year, month, date];
+		},
+		addDateClass: function([year, month, date, className]){
+			for(var i = 0, len = arguments.length; i < len; i++){
+				if(arguments[i][0] == this.year && arguments[i][1] == this.month && arguments[i][2] > 0 && date <= 31){
+					rowNum = parseInt((arguments[i][2] + this.pre) / 7);
+					colNum = (arguments[i][2] + this.pre + 1) % 7;
+					var td = document.getElementsByClassName("calendar-content-body")[rowNum].getElementsByTagName("td")[colNum];
+					if(td.innerHTML){
+						myjs.addClass(td, arguments[i][3]);
+					}
+				}
+			}
+		},
+		removeDateClass: function(className){
+			var table = document.getElementsByClassName("calendar-content")[0];
+			var tds = table.getElementsByClassName(className);
+			for(var i = 0, len = tds.length; i < len; i++){
+				myjs.delClass(tds[i], className);
+			}
 		},
 		
 		

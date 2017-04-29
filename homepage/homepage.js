@@ -34,13 +34,12 @@
 			$("tag-list").appendChild(ul);
 		})();
 
-		
 		var articleElem = myjs.$("homepage").getElementsByTagName("article")[0];
 		var article = [];
 		
 		var usualCH = {
 			title: "常用汉字及其unicode编码",
-			lastModified: "2017-4-21 15:09:06",
+			lastModified: "2017-04-21 15:09:06",
 			tag: ["webTools", "html"],
 			summary: "常用汉字及其unicode",
 			recommandation: 4,
@@ -119,7 +118,60 @@
 			}
 		});
 		
-		//	日历栏添加点击事件
+		//	日历
+		!function(){
+			var config = {
+				date: new Date(),			//	初始化日期
+				container: myjs.$("calendar"),	//	容器
+				selectable: false,			//	顶部月份年份是否可选
+				suitable: false,			//	行数是否自适应（或固定6行）
+				selectType: 1,				//	主体日期是否可选（0--不可选**1--可选单个日期**2--可选时间段）
+				specialDates: [
+					{
+						date: [2017, 3, 21],
+						content: "常用汉字及其unicode编码"
+					},
+					{
+						date: [2017, 3, 23],
+						content: "批量修改文件名"
+					},
+					{
+						date: [2017, 3, 24],
+						content: "html字符与编码"
+					},
+					{
+						date: [2017, 3, 24],
+						content: "git-Bash小教程"
+					},
+					{
+						date: [2017, 3, 27],
+						content: "图片白底变透明"
+					},
+				],
+				fn: handleClick,
+			};
+			
+			var calendar = new Calendar(config);
+			calendar.init();
+			function handleClick(data){
+				articleElem.innerHTML = "";
+				var str = convertToString(data);
+				for(var i=0, len=article.length; i<len; i++){
+					if(article[i].lastModified.indexOf(str) >= 0){
+						articleElem.appendChild(createArticleSection(article[i]));
+					}
+				}
+			}
+			function convertToString(dateObject){
+				var year = dateObject.getFullYear() + "";
+				var month = dateObject.getMonth() + 1;
+				var date = dateObject.getDate();
+				month = month > 9 ? month : "0" + month;
+				date = date > 9 ? date : "0" + date;
+				return year + "-" + month + "-" + date;
+			}
+			
+		}();
 		
 		
 		
@@ -181,36 +233,12 @@
 		
 	}();
 	
-	//	日历
-	!function(){
-		var config = {
-			date: new Date(),			//	初始化日期
-			container: myjs.$("calendar"),	//	容器
-			selectable: false,			//	顶部月份年份是否可选
-			suitable: false,			//	行数是否自适应（或固定6行）
-			selectType: 2,				//	主体日期是否可选（0--不可选**1--可选单个日期**2--可选时间段）
-		};
-		var calendar = new Calendar(config);
-		
-		calendar.init();
-	}();
-	
 	//	搜索框
 	!function(){
-		
-		var config = {
-			targetElem: myjs.$("md5"),
-			width: "300px",
-			height: "35px",
-			inpDT: "md5",
-			btnDT: "确认",
-			fn: search
-		}
-		
-		var easyInput = new EasyInput(config);
-		easyInput.init();
-		function search(){
-			alert(myjs.md5(easyInput.searchValue));
+		var searchBtn = document.getElementsByClassName("msg")[0].getElementsByClassName("search-button")[0];
+		myjs.addHandler(searchBtn, "click", search);
+		function search(event){
+			alert("功能完善中...");
 		}
 		
 	}();
