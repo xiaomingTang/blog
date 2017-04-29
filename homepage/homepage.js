@@ -119,7 +119,24 @@
 		});
 		
 		//	日历
-		!function(){
+	//	!function(){
+			function convertToString(dateObject){
+				var year = dateObject.getFullYear() + "";
+				var month = dateObject.getMonth() + 1;
+				var date = dateObject.getDate();
+				month = month > 9 ? month : "0" + month;
+				date = date > 9 ? date : "0" + date;
+				return year + "-" + month + "-" + date;
+			}
+			function handleClick(data){
+				articleElem.innerHTML = "";
+				var str = convertToString(data);
+				for(var i=0, len=article.length; i<len; i++){
+					if(article[i].lastModified.indexOf(str) >= 0){
+						articleElem.appendChild(createArticleSection(article[i]));
+					}
+				}
+			}
 			var config = {
 				date: new Date(),			//	初始化日期
 				container: myjs.$("calendar"),	//	容器
@@ -150,28 +167,10 @@
 				],
 				fn: handleClick,
 			};
-			
 			var calendar = new Calendar(config);
 			calendar.init();
-			function handleClick(data){
-				articleElem.innerHTML = "";
-				var str = convertToString(data);
-				for(var i=0, len=article.length; i<len; i++){
-					if(article[i].lastModified.indexOf(str) >= 0){
-						articleElem.appendChild(createArticleSection(article[i]));
-					}
-				}
-			}
-			function convertToString(dateObject){
-				var year = dateObject.getFullYear() + "";
-				var month = dateObject.getMonth() + 1;
-				var date = dateObject.getDate();
-				month = month > 9 ? month : "0" + month;
-				date = date > 9 ? date : "0" + date;
-				return year + "-" + month + "-" + date;
-			}
 			
-		}();
+	//	}();
 		
 		
 		
@@ -240,11 +239,14 @@
 		function search(event){
 			alert("功能完善中...");
 		}
-		
 	}();
 	
 	//	我的图片配置
 	$("me").src = "homepage/img/me.jpg";
+	//	全屏显示大图
+	myjs.$("me").onclick = function(){
+		fullScreenDisplay(this.src);
+	}
 	
 	//	轮播图配置
  	!function(){
@@ -254,16 +256,12 @@
 				width: 1200,
 				height: 300,
 				delay: 4000,
-			},
-			carousel=new Carousel(config);
+			};
+		var carousel=new Carousel(config);
 		carousel.init();
 		
 	}();
 	
-	//	全屏显示大图
-	myjs.$("me").onclick = function(){
-		fullScreenDisplay(this.src);
-	}
 	
 	
 	

@@ -11,9 +11,7 @@
 	
 	calendar.init();
  	*/
- 	
 	function Calendar(config){
-		
 		this.dateObj = config.date;
 		var that = this;
 		
@@ -41,9 +39,9 @@
 		this.container = config.container;
 		this.selectable = config.selectable || false;	// 年份、月份是否可选
 		this.suitable = config.suitable || false;		// 日历行数是否自适应
-		this.selectType = config.selectType || 0;		// 日期选择模式 0:不可选 1:选择一个日期 2:选择一个时间段
+		this.selectType = config.selectType || 1;		// 日期选择模式 0:不可选 1:选择一个日期 2:选择一个时间段
 		
-		this.selectStart = null;
+		this.selectStart = undefined;
 		this.box = null;
 		this.elem = null;
 		
@@ -139,14 +137,14 @@
 			var curMonth=curDate.getMonth();
 			var tempDate= curYear<this.year ? -8 : curYear>this.year ? 40 : curMonth<this.month ? -8 : curMonth>this.month ? 40 : curDate.getDate();
 			var specialDate = {};
-			console.log(this.specialDates);
+			
 			for(var i = 0, len = this.specialDates.length; i < len; i++){
 				if(this.specialDates[i].date[0] == this.year && this.specialDates[i].date[1] == this.month){
 					var str = specialDate[this.specialDates[i].date[2] + ""];
 					specialDate[this.specialDates[i].date[2] + ""] = str ? str + this.specialDates[i].content + " ; " : this.specialDates[i].content + " ; ";
 				}
 			}
-			console.log(specialDate);
+			
 			for(var i = 0; i < total; i++){
 				if(i % 7 == 0){
 					var tr = myjs.newElem("tr", "calendar-content-body");
@@ -278,7 +276,7 @@
 			date = date > 9 ? date : "0" + date;
 			return [year, month, date];
 		},
-		addDateClass: function([year, month, date, className]){
+		addDateClass: function(/*[year, month, date, className]*/){
 			for(var i = 0, len = arguments.length; i < len; i++){
 				if(arguments[i][0] == this.year && arguments[i][1] == this.month && arguments[i][2] > 0 && date <= 31){
 					rowNum = parseInt((arguments[i][2] + this.pre) / 7);
@@ -300,8 +298,6 @@
 		
 		
 	}
-	
-	
 	
 	
 	
