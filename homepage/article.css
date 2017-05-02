@@ -21,8 +21,8 @@ aside > section:first-child, article > section:first-child{
 
 
 aside{
-	float:right;
-	width:20.75em;
+	float: right;
+	width: 20.75em;
 }
 aside.fixed{
 	position:fixed;
