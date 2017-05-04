@@ -19,7 +19,8 @@
 			life: "日常生活",
 			github: "github",
 			reprint: "转载",
-			killtime:"闲聊",
+			killtime: "闲聊",
+			algorithm: "数据结构与算法"
 		}
 
 		//根据tagList动态创建侧边栏的标签列表
@@ -88,6 +89,16 @@
  		
 		}
  		article.unshift(toPNG);
+		var RBTree = {
+			title: "js红黑树",
+			lastModified: "2017-05-05  7:03:20",
+			tag: ["js", "webTools", "algorithm"],
+			url: "article/RBTree/index.html",
+			summary: "红黑树的js实现。（附源程序及简略验证）",
+			recommandation: 5,
+ 		
+		}
+ 		article.unshift(RBTree);
 		
 		//将article数组中的所有文章动态创建出来
 		for(var i=0, len=article.length; i<len; i++){
