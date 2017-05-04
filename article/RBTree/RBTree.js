@@ -11,7 +11,7 @@
 	 * - 参考	http://blog.csdn.net/yang_yulei/article/details/26066409	一颗红黑树的构造全过程
 	 * - 参考	https://zhuanlan.zhihu.com/p/24795143?refer=dreawer	【深入理解Java集合框架】史上最清晰的红黑树讲解（上）
 	 * 
-	 * # 原创，权利归属: https://xiaomingTang.github.io/ #
+	 * # 原创，权利归属: https://xiaomingTang.github.io/blog/ #
 	 * (有一个小bug，可是这里空白太小，写不下。)
 	 */
 	
