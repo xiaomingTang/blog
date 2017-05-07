@@ -42,6 +42,7 @@ window.onload=function(){
 			}
 			reader.onload = function(){
 				$("#loading").text("你不知道，其实图片还在加载。相信我！");
+				$("#urldata").text(reader.result);
 				myjs.$("img").src = reader.result;
 				
 				myjs.$("img").onload = function(){
